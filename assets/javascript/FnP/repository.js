@@ -6,6 +6,8 @@ var	oauthAuth = new GitHub(logged ? { token: logged } : {}),
 repo.getDetails(function(e,r){
 	// CHECK ADMIN
 	if (r.permissions && r.permissions.admin) {
+		// Show admin link
+		document.querySelector('a[href*="admin"][hidden]').removeAttribute('hidden');
 		// CHECK FORK
 		if (r.owner.type === "User" && r.fork) {
 			// Check synch
@@ -23,8 +25,5 @@ repo.getDetails(function(e,r){
 				}
 			});
 		}
-	} else {
-		// HIDE ADMIN LINK
-		document.querySelector('a[href*="admin"]').style.display = 'none';
 	}
 });
