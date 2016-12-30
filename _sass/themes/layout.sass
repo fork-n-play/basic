@@ -1,0 +1,76 @@
+html
+	overflow-y: scroll
+
+body
+	font: medium/1.5 Helvetica, sans-serif
+	margin: 1em auto
+	color: #222
+	max-width: 60em
+
+// links
+
+a[href]
+	color: blue
+	&:hover
+		text-decoration: none
+	&:active
+		color: white
+	&.active
+		color: red
+		text-decoration: none
+		cursor: default
+
+// main layout
+
+main
+	margin: 2em 1em
+
+header
+	font-size: larger
+	font-weight: bold
+	border-bottom: 1px solid #222
+	h1, p
+		margin: 0
+		text-align: center
+	nav
+		margin: 1em
+		a
+			padding: .7em
+			text-transform: uppercase
+
+footer
+	border-top: 1px solid #222
+	padding: 2em 1em
+
+// header and footer navigation
+
+footer,
+header nav
+	ul
+		margin: 0
+		padding: 0
+		border: 0
+		li:last-of-type
+			float: right
+		li
+			list-style-image: none
+			list-style-type: none
+			display: inline-block
+			vertical-align: middle
+			white-space: nowrap
+
+// code
+
+pre
+	background: #f7f7f7
+	padding: 1em
+	overflow: auto /* FIX */
+
+code
+	font-family: Consolas, Menlo, Courier, monospace
+
+li > code, h2 code, h3 code
+	padding: 2px 4px 0
+	background: #f7f7f7
+	border: 1px solid #f1f1f1
+	border-radius: 3px

@@ -1,0 +1,27 @@
+<!doctype html>
+<title>{{ site.github.project_title | capitalize }}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
+<script src="{{ '/assets/javascript/polyfills.js' | absolute_url }}"></script>
+<script src="{{ '/assets/javascript/github/GitHub.bundle.js' | absolute_url }}"></script>
+<script src="{{ '/assets/javascript/script.js' | absolute_url }}" defer></script>
+{% include pagescript.html %}
+
+<header>
+	<h1>{{ site.github.project_title | capitalize }}</h1>
+	<p>{{ site.github.project_tagline }}</p>
+	{% include navigation.html %}
+</header>
+
+<main>
+{{ content }}
+</main>
+
+{% include templates/loggator.html %}
+
+<footer>
+	<ul>
+		<li>Repository: <a href="{{ site.github.repository_url }}">{{ site.github.repository_nwo }}</a></li>
+		<li><a href="#top">top</a></li>
+	</ul>
+</footer>
