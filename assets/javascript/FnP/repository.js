@@ -18,9 +18,9 @@ repo.getDetails(function(e,r){
 				console.log('parent ref', r.object.sha);
 				if (r.object.sha != BUILD_REVISION) {
 					// Update ref
-					repo.createRef({ ref: 'refs/heads/master', sha: r.object.sha }, function (e,r) {
+					repo.updateHead('refs/heads/master', r.object.sha, true, function (e,r) {
 						console.log('new ref', r);
-						flash('updated: new ref');
+						dialog('updated: new ref');
 					});
 				}
 			});
