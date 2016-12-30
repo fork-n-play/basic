@@ -16,10 +16,10 @@ repo.getDetails(function(e,r){
 			// Get parent ref
 			parentRepo.getRef('heads/master', function(e,r) {
 				console.log('parent ref', r.object.sha);
-				if (r.object.sha != BUILD_REVISION) {
+				if (r.object.sha !== BUILD_REVISION) {
 					// Update ref
-					repo.updateHead('heads/master', r.object.sha, true, function (e,r) {
-						console.log('new ref', r);
+					repo.updateHead('heads/master', r.object.sha, true, function (e,sha) {
+						console.log('new ref', sha.object.sha);
 						dialog('updated: new ref');
 					});
 				}
