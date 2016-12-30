@@ -1,7 +1,6 @@
 ---
 title: metadata
 permalink: /metadata
-navigation_weight: 3
 ---
 - `site.github.build_revision` – **`{{ site.github.build_revision }}`**
 
@@ -37,7 +36,7 @@ navigation_weight: 3
 ## Releases
 
 - `site.github.releases` – {{ site.github.releases.size }}
-{% for r in site.github.releases %}{% if {{forloop.index0}} == 0 %}{{r | jsonify}}{% endif %}  - `{{ r.tag_name }}` – {{ r.name | xml_escape }} *({{ r.created_at | date_to_string }})*
+{% for r in site.github.releases %}{% if forloop.index0 == 0 %}{{r | jsonify}}{% endif %}  - `{{ r.tag_name }}` – {{ r.name | xml_escape }} *({{ r.created_at | date_to_string }})*
 {% endfor %}
 
 ## Repositories

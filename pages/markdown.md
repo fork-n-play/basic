@@ -1,7 +1,6 @@
 ---
 title: markdown
 permalink: /markdown
-navigation_weight: 2
 ---
 
 ## Headings
