@@ -1,0 +1,13 @@
+language: ruby
+
+rvm:
+    - 2.1
+
+branches:
+    only:
+        - master
+
+script: "bundle exec jekyll build"
+
+after_script:
+    - bash ./pullrequest.sh
