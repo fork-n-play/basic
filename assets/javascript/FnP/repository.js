@@ -11,10 +11,11 @@ repo.getDetails(function(e,r){
 		// CHECK FORK
 		if (r.owner.type === "User" && r.fork) {
 			// Check synch
-			var parentRepo = [r.parent.owner.login, r.parent.name].join('/');
+			var parentNwo = [r.parent.owner.login, r.parent.name].join('/');
 			console.log('parent', parentRepo);
+			parentRepo = oauthAuth.getRepo(r.parent.owner.login, r.parent.name),
 			// Get parent ref
-			getRef(parentRepo, function(e,r) {
+			parentRepo.getRef(parentNwo, function(e,r) {
 				console.log('parent ref', r.object.sha);
 				if (r.object.sha != BUILD_REVISON) {
 					// Update ref
