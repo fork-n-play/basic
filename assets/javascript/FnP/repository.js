@@ -12,7 +12,6 @@ repo.getDetails(function(e,r){
 		if (r.owner.type === "User" && r.fork) {
 			// Check synch
 			var parentNwo = [r.parent.owner.login, r.parent.name].join('/');
-			console.log('parent', parentRepo);
 			parentRepo = oauthAuth.getRepo(r.parent.owner.login, r.parent.name),
 			// Get parent ref
 			parentRepo.getRef(parentNwo, function(e,r) {
