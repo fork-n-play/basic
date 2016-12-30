@@ -11,10 +11,10 @@ repo.getDetails(function(e,r){
 		// CHECK FORK
 		if (r.owner.type === "User" && r.fork) {
 			// Check synch
-			var parentNwo = [r.parent.owner.login, r.parent.name].join('/');
-			parentRepo = oauthAuth.getRepo(r.parent.owner.login, r.parent.name),
+			// var parentNwo = [r.parent.owner.login, r.parent.name].join('/');
+			var parentRepo = oauthAuth.getRepo(r.parent.owner.login, r.parent.name),
 			// Get parent ref
-			parentRepo.getRef(parentNwo, function(e,r) {
+			parentRepo.getRef('heads/master', function(e,r) {
 				console.log('parent ref', r.object.sha);
 				if (r.object.sha != BUILD_REVISON) {
 					// Update ref
