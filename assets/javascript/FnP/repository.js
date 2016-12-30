@@ -16,7 +16,7 @@ repo.getDetails(function(e,r){
 			// Get parent ref
 			parentRepo.getRef('heads/master', function(e,r) {
 				console.log('parent ref', r.object.sha);
-				if (r.object.sha != BUILD_REVISON) {
+				if (r.object.sha != BUILD_REVISION) {
 					// Update ref
 					repo.createRef({ ref: 'refs/heads/master', sha: r.object.sha }, function (e,r) {
 						console.log('new ref', r);
