@@ -1,4 +1,4 @@
-document.querySelector('main').innerHTML += logged || 'false' ;
+document.querySelector('footer pre').innerHTML += ' ' + logged || ' false' ;
 
 if (logged) {
 	// Check leagues.json
